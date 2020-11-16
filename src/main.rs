@@ -20,7 +20,16 @@ fn main() {
     println!("c = {}", c);
 
     let z: isize = 123;
-    let size_of_z = mem::size_of_val(&z);
+    let size_of_z:usize = mem::size_of_val(&z);
     println!("z = {}, takes up {} bytes, {}=bit OS",
         z, size_of_z, size_of_z*8);
+
+    let d: char = 'x';
+    println!("d = {} and is a char, size = {} bytes", d, mem::size_of_val(&d));
+
+    let e: f32 = 2.5; // always f64 if not specified
+    println!("e = {}, size = {} bytes", e, mem::size_of_val(&e));
+
+    let g: bool = false; // true
+    println!("g = {}, size = {} bytes", g, mem::size_of_val(&g));
 }
